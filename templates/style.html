@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title%}
+    
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CSS/main.css') }}"> 
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CSS/element.css') }}"> 
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='Bootstrap/css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/CSS/font/font_awesome.css') }}">
+{% block extracss %}
+{% endblock %}
+{% block css %}
+{% endblock %}
+</html>

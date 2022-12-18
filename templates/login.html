@@ -1,0 +1,55 @@
+{% extends "style.html" %}
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div style="width: 90%;">
+        <h1 style="text-align: center;" id="library1">Library</h1>
+        <h2>Login</h2>
+        <hr>
+        <div style="width: 100%;" class="d-flex justify-content-center">
+            <form id="form_login" method="POST" action="/login">    
+                <div id="line1" class="d-flex justify-content-between">
+                    <label id="lbl_info">
+                        <strong>
+                            Username
+                        </strong>
+                    </label>
+                    <input id="kotak_input" name="username" type="text" placeholder="Enter Username">                    
+                </div>
+                <div id="line1" class="d-flex justify-content-between">
+                    <label id="lbl_info">
+                        <strong>
+                            Password
+                        </strong>
+                    </label>
+                    <input id="kotak_input" name="password" type="password" placeholder="Enter Password">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p></p>
+                    <div id="posisi_bawah_form">
+                        {% if error %}
+                         <p id="error_message">{{ error }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                    <p></p>
+                    <div id="posisi_bawah_form">
+                        <input class="btn btn-dark" id="btn_masuk" type="submit" value="Sign In">
+                    </div>
+                </div>
+                <div id="line1" style = "position:relative; left:380px; top:2px">
+                    <a id="link_ref" href="/home">Continue as a guest</a>                
+                </div>
+            </form>
+        </div>
+        <hr>
+    </div>
+</div>
+{% endblock %}
+{% block extracss %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CSS/login.css') }}">
+{% endblock %}

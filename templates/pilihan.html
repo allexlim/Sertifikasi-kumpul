@@ -1,0 +1,22 @@
+{% extends 'navigation.html' %}
+{% block content %}
+<body id="body">
+    <div class= "title">
+        <h1 style = "position:relative; left:70px; top:50px">What to access?</h1>
+        <div id="topbar-right-right">
+            <form action="/logout" method="POST">
+                <input value="Log Out" class="button" type="submit">
+            </form>
+        </div>
+        <hr id="garis" style="width: 5%" >
+        <br>
+    </div>
+    <div class= "choices">
+        <div class="d-flex justify-content-around">
+            <a href="/home"><button class="button1">Book Collection</button></a>
+            <a href="/addBorrowedBook"><button class="button1">Add Borrowed Book</button></a>
+            <!-- <a href="/borrower"><button class="button1">Borrower</button></a> -->
+        </div>
+    </div>
+</body>
+{% endblock %}

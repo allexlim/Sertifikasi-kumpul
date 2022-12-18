@@ -1,0 +1,62 @@
+{% extends "navigation.html" %}
+{% block content %}
+<script src="{{ url_for('static',filename='JQuery/jquery-3.5.1.js') }}" type=""></script>
+<script src="{{ url_for('static', filename='js/koleksiPage.js') }}"></script>
+
+<body>
+    <div class="d-flex justify-content-between">
+        <h3>Welcome to Library</h3>
+        {% if session %}
+        
+        <a href="/menuPilihan"><button class="bigButton">Back to Main Menu</button></a>
+        <a href="/addBorrowedBook"></a>
+        {% else %}
+        <a href="/login"><button class="bigButton">Back to Login</button></a>
+        {% endif %}
+    </div>
+    
+    <div class="container" id="kontenKoleksiBuku">
+        
+    </div>
+</body>
+
+<style>
+    .bigButton{
+        color: white;
+        background-color: black;
+        
+    }
+    .bodyClass{
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #kontenKoleksiBuku{
+        float: left;
+        flex-direction: row;
+        display: inline;
+    }
+    .divKontenBuku{
+        float: left;
+        display: block;
+        margin: 10px;
+        border: 1px black solid;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 150px;
+        
+    }
+    .divKontenBuku p{
+        text-align: center;
+    }
+    .gambarKonten{
+        width: 50px;
+        height: 75px;
+        align-items: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+{% endblock %}

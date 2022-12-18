@@ -1,0 +1,54 @@
+{% extends "style.html" %}
+{% block content %}
+<body>
+    <div class="head d-flex justify-content-between"> 
+        <div class="topleft">
+            <h1>Preview Book</h1>
+        </div>
+        <div class="topright">
+            <a href="/home"><h1>Back to library</h1></a>
+        </div>
+    </div>
+    <div class="middleContent d-flex justify-content-center">
+        <div class="gambar">
+            <img src="https://www.tutorialspoint.com/javafx/images/javafx-mini-logo.jpg">
+        </div>
+        <div class="contenBuku  d-flex justify-content-center">
+            <div class="isian">
+                <h2>Nama Buku    : </h2>
+                <h5>publication date :</h5>
+                <h5>author  :</h5>
+                <h5>availibilty  :</h5>
+                {% if session %}
+                <h5>Borrower  :</h5>
+                <h5>Date Borrower  :</h5>
+                <h5>Date Needed to be returned  :</h5>
+                {% endif %}
+            </div>
+            <div class="dataIsian">
+                <h2>{{ judul }}</h2>
+                <h5>{{ tahun }}</h5>
+                <h5>{{ penulis }}</h5>
+                {% if status == 1 %}
+                <h5>Tersedia</h5>
+                {% else %}
+                <h5>Tidak Tersedia</h5>
+                {% endif %}
+                {% if session %}
+                <h5>kris</h5>
+                <h5>12-06-2004</h5>
+                <h5>1-01-2005</h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="bottomContent">
+        <h5>Sinopsis :</h5>
+        <h6>{{ sinopsis }}</h6>
+    </div>
+</body>
+</html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/previewBook.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+{% endblock %}

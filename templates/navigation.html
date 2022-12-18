@@ -1,0 +1,48 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <!-- script-->
+<script src="{{ url_for('static',filename='JQuery/jquery-3.5.1.js') }}" type=""></script>
+<script src="{{ url_for('static',filename='Bootstrap/js/pooper.js') }}" type=""></script>
+<script src="{{ url_for('static',filename='Bootstrap/js/bootstrap.js') }}" type=""></script>
+<script src="{{ url_for('static',filename='Bootstrap/js/bootstrap.min.js') }}" type=""></script>
+<script src="https://kit.fontawesome.com/62bda8f93a.js" crossorigin="anonymous"></script>
+<script data-cfasync="false" type="text/javascript" src="{{ url_for('static', filename='Assets/js/main.js') }}"></script>
+</head>
+  <!-- Header -->
+  <header class="TopBar">        
+    <div class="d-flex justify-content-between">
+        <div id="librarytitle">
+            <a href="ttle" style="color: white;">
+                <h1>Library</h1>
+            </a>
+        </div>
+            <div id="tb_cari">
+              <a id="submenu" class="nav-link">
+                <form id="form_search" method="GET" action="/collection">
+                  {% if "search" in session %}
+                    <input id="text_cari" type="text" placeholder="Search" name="text_cari" value="{{search}}">
+                  {% else %}
+                    <input id="text_cari" type="text" placeholder="Search" name="text_cari">
+                  {% endif %}
+                  <button class="fa fa-search" type="submit" id="btn_cari">
+                  </button>            
+                </form>
+              </a>
+            </div>
+    </div>             
+  </header>
+  {% block content %}
+  {% endblock %}
+{% block navcss %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navigation.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CSS/main.css') }}"> 
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='CSS/element.css') }}"> 
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='Bootstrap/css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/CSS/font/font_awesome.css') }}">
+{% endblock %}
+
+
+
+  

@@ -1,0 +1,49 @@
+{% extends "style.html" %}
+{% block content %}
+<script src="{{ url_for('static',filename='JQuery/jquery-3.5.1.js') }}"></script>
+<script src="{{ url_for('static', filename='js/koleksiPage.js') }}"></script>
+<body>
+    <div class="head d-flex justify-content-between"> 
+        <div class="topleft">
+            <h1>Add Borrowed Book</h1>
+        </div>
+        <div class="topright">
+            <a href="/menuPilihan"><h1>Back to Menu</h1></a>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/daftarBorrowedBook" method="POST">
+
+          <label for="jname">Book Id</label>
+          <input type="text" id="jname" name="bukuId" placeholder="Enter Book Id">
+      
+          <label for="pname">Borrower Id</label>
+          <input type="text" id="jname" name="borroweId" placeholder="Enter Borrower Id">
+
+          <label for="ttname">Date Borrow</label>
+          <input disabled type="date" id="DateBorrow" name="DateBorrow" placeholder="Select Date" value="{{ todayDate }}" onchange="todayDateChange()">
+
+          <label for="pname">Date Returned</label>
+          <input disabled type="date" id="DateReturned" name="DateReturned" placeholder="Select Date Must Return" value="{{ returnDate }}">
+      
+          <input type="submit" value="Done" class="d-flex justify-content-center">
+      
+        </form>
+      </div>
+</body>
+
+<script>
+  function todayDateChange(){
+    var dateTag = document.getElementById('DateBorrow')
+    var d = new Date($('#DateBorrow').val())
+    console.log(d)
+    var dd = new Date()
+    dd.setDate(d + 7)
+    var returnDateTag = document.getElementById('DateReturned')
+    returnDateTag.value = dd.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDay()
+  }
+</script>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/addBook.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+{% endblock %}
