@@ -1,0 +1,32 @@
+.head{
+    position: relative;  
+    top: 8px;
+    margin: 20px;
+ 
+}
+.middleContent{
+    position: relative;
+    padding-top: 100px;
+}
+.contentBuku{
+    position: relative;
+    margin: 20px;
+}
+.gambar{
+    position: relative;
+    margin: 20px;
+}
+
+.isian{
+    position: relative;
+    margin: 20px;
+
+}
+.dataIsian{
+    position: relative;
+    margin: 20px;
+}
+.bottomContent{
+    position: relative;  
+    margin: 125px;
+}

@@ -1,0 +1,44 @@
+#form_login
+{
+    width: 90%;
+}
+#line1
+{
+    margin: 10px 0px;
+}
+#kotak_input
+{
+    width: 70%;
+    font-size: 44px;
+}
+#posisi_bawah_form
+{
+    width: 70%;
+}
+#btn_masuk
+{
+    width: 50%;
+    font-size: 44px;
+    padding: 0px;
+}
+#lbl_info
+{
+    font-size: 48px;
+}
+#title_page
+{
+    font-size: 64px;
+}
+#link_ref
+{
+    font-size: 24px;
+}
+#btn_login
+{
+    font-size: 21px;
+}
+#error_message
+{
+    color: red;
+    font-size: 21px;
+}

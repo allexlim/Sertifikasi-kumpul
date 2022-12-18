@@ -1,0 +1,20 @@
+#Shopping_Cart
+{
+    background-color: white;
+    width: auto;
+    height: auto;
+}
+/* #troli
+{    
+    width: 72px;
+    height: 57px;
+} */
+#btn_register
+{
+    border: white solid 3px;
+    margin: 4px 0px;
+}
+#profile_picture
+{
+    border: 2px solid white;
+}
