@@ -3,7 +3,7 @@ import datetime
 from datetime import timedelta
 
 class buku:
-    def __init__(self, id = "", judul = "", penulis = "", tahunTerbit = "", etalase = "", statusKetersediaan = "", sinopsis = ""):
+    def __init__(self, id = "", judul = "", penulis = "", tahunTerbit = "", etalase = "", statusKetersediaan = "", sinopsis = ""): # [ = "" ] -> tidak wajib
         self.id = id
         self.judul = judul
         self.penulis = penulis
@@ -37,7 +37,7 @@ class buku:
         mySqlConnection = connectionData.newConnection()
         cursor = mySqlConnection.cursor()
         cursor.callproc('addBook',[self.judul, self.penulis, self.tahunTerbit, self.sinopsis, self.etalase])
-        mySqlConnection.commit()
+        mySqlConnection.commit() # Khusus digunakan jika queri bersifat CUD / apply perubahan
         cursor.close()
         mySqlConnection.close()
         
@@ -50,7 +50,7 @@ class peminjam:
     def muatDataIdentitas(self):
         mySqlConnection = connectionData.newConnection()
         cursor = mySqlConnection.cursor()
-        cursor.callproc('getBorrower', [self.id])
+        cursor.callproc('getBorrower', [self.id]) # cursor.callproc(//procedurname//, //parameter//)
         hasilTemp = []
         for i in cursor.stored_results():
             hasilTemp += i

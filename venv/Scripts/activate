@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Alex File\Aciang (nnti hapus)\University\Sertifikasi\Kumpul\Github\Fix_sertifikasi_perpustakaan\venv"
+VIRTUAL_ENV="D:\Alex File\Aciang (nnti hapus)\University\Sertifikasi\FIX_FIX_FIX AKHIR\Fix_sertifikasi_perpustakaan\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

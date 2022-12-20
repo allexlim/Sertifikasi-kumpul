@@ -13,6 +13,9 @@
         <div class="gambar">
             <img src="https://www.tutorialspoint.com/javafx/images/javafx-mini-logo.jpg">
         </div>
+        {% if session %}
+        <a href="editBuku-{{ id }}"><button>EDIT BOOK</button></a>
+        {% endif %}
         <div class="contenBuku  d-flex justify-content-center">
             <div class="isian">
                 <h2>Nama Buku    : </h2>
@@ -20,9 +23,9 @@
                 <h5>author  :</h5>
                 <h5>availibilty  :</h5>
                 {% if session %}
-                <h5>Borrower  :</h5>
+                <!-- <h5>Borrower  :</h5>
                 <h5>Date Borrower  :</h5>
-                <h5>Date Needed to be returned  :</h5>
+                <h5>Date Needed to be returned  :</h5> -->
                 {% endif %}
             </div>
             <div class="dataIsian">
@@ -35,9 +38,9 @@
                 <h5>Tidak Tersedia</h5>
                 {% endif %}
                 {% if session %}
-                <h5>kris</h5>
+                <!-- <h5>kris</h5>
                 <h5>12-06-2004</h5>
-                <h5>1-01-2005</h5>
+                <h5>1-01-2005</h5> -->
                 {% endif %}
             </div>
         </div>

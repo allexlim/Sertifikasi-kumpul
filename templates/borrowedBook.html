@@ -1,0 +1,44 @@
+{% extends "style.html" %}
+{% block content %}
+<body>
+    <div class="head d-flex justify-content-between"> 
+        <div class="topleft">
+            <h1>Borrowed Book</h1>
+        </div>
+        <div class="topright">
+            <h1>Back to library</h1>
+        </div>
+    </div>
+    <div class="tabelContent d-flex justify-content-center">
+        <table>
+            <tr style="background-color: black;color:white;">
+              <th>ID</th>
+              <th>Book Name</th>
+              <th>Name</th>
+              <th>Date Borrowed</th>
+              <th>Date Returned</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>BPJ2200200</td>
+              <td>Narnia</td>
+              <td>kris</td>
+              <td>22-05-2022</td>
+              <td>30-05-2022</td>
+              <td>hapus</td>
+            </tr>
+        </table>
+        <div class="buttonAdd d-flex justify-content-end">
+            <p></p>
+            <div id="posisi_bawah_form">
+                <input class="btn btn-dark" id="btn_addBorrowed" type="submit" value="+">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/borrowedBook.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+{% endblock %}

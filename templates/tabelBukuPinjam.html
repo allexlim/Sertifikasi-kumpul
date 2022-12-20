@@ -1,0 +1,59 @@
+{% extends "style.html" %}
+{% block content %}
+<body>
+    <div class="head d-flex justify-content-between"> 
+        <div class="topleft">
+            <h1>Borrower</h1>
+        </div>
+        <div class="topright">
+            <a href="/menuPilihan"><h1>Back to Main Menu</h1></a>
+        </div>
+    </div>
+    <div class="tabelContent d-flex justify-content-center">
+        <table>
+            <tr style="background-color: black;color:white;">
+              <th>ID</th>
+              <th>Buku</th>
+              <th>Peminjam</th>
+              <th>Dimasukkan Oleh</th>
+              <th>Tanggal Pinjam</th>
+              <th>Tanggal Harus Dikembalikan</th>
+              <th>Kembali Pada</th>
+              <th>Status</th>
+              <th>Tindakan</th>
+              
+            </tr>
+            {% for data in theData %}
+            <tr>
+              <td>{{ data[0] }}</td>
+              <td>{{ data[1] }}</td>
+              <td>{{ data[2] }}</td>
+              <td>{{ data[3] }}</td>
+              <td>{{ data[4] }}</td>
+              <td>{{ data[5] }}</td>
+              <td>{{ data[6] }}</td>
+              {% if data[7] == 1%}
+              <td>Masih Pinjam</td>
+              {% else %}
+              <td>Sudah Kembali</td>
+              {% endif %}
+              <th>
+                <a href="/kembalikanTabelBukuPinjam-{{ data[0] }}"><button>Ubah menjadi "Sudah Kembali"</button></a>
+              </th>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="buttonAdd d-flex justify-content-end">
+            <p></p>
+            <!-- <div id="posisi_bawah_form">
+                <input class="btn btn-dark" id="btn_addBorrower" type="submit" value="+">
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/borrower.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+{% endblock %}

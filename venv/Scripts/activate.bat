@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\Alex File\Aciang (nnti hapus)\University\Sertifikasi\Kumpul\Github\Fix_sertifikasi_perpustakaan\venv
+set VIRTUAL_ENV=D:\Alex File\Aciang (nnti hapus)\University\Sertifikasi\FIX_FIX_FIX AKHIR\Fix_sertifikasi_perpustakaan\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

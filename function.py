@@ -6,7 +6,7 @@ class connectionData:
             user = "root",
             password =  "",
             host =  "localhost",
-            database = "perpustakaan2"
+            database = "database_alex"
         )
         return connectThis
 

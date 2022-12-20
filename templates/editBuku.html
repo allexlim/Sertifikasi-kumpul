@@ -1,0 +1,53 @@
+{% extends "style.html" %}
+{% block content %}
+<body>
+    <div class="head d-flex justify-content-between"> 
+        <div class="topleft">
+            <h1>Edit Book</h1>
+        </div>
+        <div class="topright">
+            <a href="/{{ theData[0] }}"><h1>Back</h1></a>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/mulaiEditBuku" method="POST">
+
+        <label for="jname">ID</label>
+          <input type="text" id="jname" name="idBuku" placeholder="Insert Id" value="{{ theData[0] }}" readonly="readonly">
+          <label for="jname">Judul</label>
+          <input type="text" id="jname" name="newJudul" placeholder="Insert Judul" value="{{ theData[1] }}">
+      
+          <label for="pname">penulis</label>
+          <input type="text" id="pname" name="newPenulis" placeholder="Insert Penulis"  value="{{ theData[2] }}">
+
+          <label for="ttname">Tahun Terbit</label>
+          <input type="text" id="ttname" name="newTahunTerbit" placeholder="Insert Tahun"  value="{{ theData[3] }}">
+
+          <label for="pname">Etalase</label>
+          <select name="pilihanEtalase" id="pilihanEtalase">
+            {% for eta in DataEtalase %}
+            {% if eta[0] == theData[5] %}
+            <option value="{{ eta[0] }}">{{ eta[1] }}</option>
+            {% else %}
+            <option value="{{ eta[0] }}" selected="selected">{{ eta[1] }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+
+          <label for="sinopsus">Sinopsis</label>
+
+          <textarea id="sinopsis" name="newSinopsis" placeholder="Write something.." style="height:200px" >{{ theData[4] }}</textarea>
+
+          <label for="gambar">Gambar</label>
+          <input type="text" id="gambar" name="gambar" placeholder="Gambar">
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+</body>
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/addBook.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+{% endblock %}
